@@ -3,9 +3,10 @@
 int main()
 {
 	float r;
-	char *a = "ggg";
-	ft_printf("%p",a);
-	printf("\n%p",a);
+	char *a = "ggbg";
+	char *b = "";
+	ft_printf("%x",16);
+	printf(" %x",16);
 
 	return(0);	
 }

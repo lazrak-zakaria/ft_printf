@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 17:03:40 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/27 15:31:18 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/10/27 16:34:19 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	ft_putnbr(int c, int *l);
 void	ft_putstr(char *s, int *l);
 void	ft_putun(unsigned int n, int *l);
 void	ft_puthex(unsigned int n, int *l, char c);
-void	ft_putaddr(size_t n, int *l, int f);
+void	ft_putaddr(uintptr_t n, int *l, int f);
 int		ft_printf(char *s, ...);
 #endif

@@ -6,15 +6,15 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:35:28 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/27 15:31:38 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/10/27 17:40:49 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putaddr(size_t n, int *l, int f)
+void	ft_putaddr(uintptr_t n, int *l, int f)
 {
-	char *a;
+	char	*a;
 	
 	if (!f)
 	{
@@ -22,7 +22,7 @@ void	ft_putaddr(size_t n, int *l, int f)
 		f = 1;
 	}
 	a = "0123456789abcdef";
-	if(n > 16)
+	if(n >= 16)
 		ft_putaddr(n / 16, l,f);
 	ft_putchar(a[n % 16], l);
 }/*
