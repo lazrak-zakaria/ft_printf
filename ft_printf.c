@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:55:19 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/27 16:41:37 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/10/28 14:24:50 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_call(va_list ap, char c, int *l)
 	else if (c == 'c')
 		ft_putchar(va_arg(ap, int), l);
 	else if (c == 'p')
-		ft_putaddr(va_arg(ap, uintptr_t), l, 0);
+		ft_putaddr(va_arg(ap, size_t), l, 0);
 	else if (c == '%')
 		ft_putchar(c, l);
 	//else ft_putchar(c, l);
