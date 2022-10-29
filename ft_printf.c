@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:55:19 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/28 14:24:50 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/10/29 15:24:58 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ static void	ft_call(va_list ap, char c, int *l)
 		ft_putaddr(va_arg(ap, size_t), l, 0);
 	else if (c == '%')
 		ft_putchar(c, l);
-	//else ft_putchar(c, l);
 }
 
-int ft_printf(char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-	va_list ap;
-	
-	int	l;
+	va_list	ap;	
+	int		l;
 	size_t	i;
 
 	va_start(ap, s);
@@ -43,15 +41,15 @@ int ft_printf(char *s, ...)
 	l = 0;
 	while (s[i])
 	{
-		if(s[i] == '%' && s[i + 1])
+		if (s[i] == '%' && s[i + 1])
 		{
 			ft_call(ap, s[++i], &l);
 			i++;
-			continue;
+			continue ;
 		}
 		ft_putchar(s[i], &l);
 		i++;
 	}
 	va_end(ap);
-	return l;
+	return (l);
 }

@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 17:11:39 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/27 15:10:27 by zlazrak          ###   ########.fr       */
+/*   Created: 2022/10/26 18:11:17 by zlazrak           #+#    #+#             */
+/*   Updated: 2022/10/29 14:53:28 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
-void	ft_putstr(char *s, int *l)
+void	ft_putchar(char c, int *l)
 {
-	if (!s)
-	{
-		*l += write(1,"(null)",6);
-		return ;
-	}
-	while (*s)
-	{
-		ft_putchar(*s, l);
-		s++;
-	}
+	write(1, &c, 1);
+	(*l)++;
 }

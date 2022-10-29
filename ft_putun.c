@@ -6,16 +6,15 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 09:48:30 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/27 15:01:52 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/10/29 15:20:35 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_putun(unsigned int n, int *l)
 {
-	if(n > 9)
+	if (n > 9)
 		ft_putun(n / 10, l);
 	ft_putchar(n % 10 + 48, l);
-	
 }

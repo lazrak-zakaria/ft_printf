@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putaddr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 13:35:28 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/28 14:25:23 by zlazrak          ###   ########.fr       */
+/*   Created: 2022/10/26 17:11:39 by zlazrak           #+#    #+#             */
+/*   Updated: 2022/10/29 15:18:11 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
-void	ft_putaddr(size_t n, int *l, int f)
+void	ft_putstr(char *s, int *l)
 {
-	char	*a;
-	
-	if (!f)
+	if (!s)
 	{
-		ft_putstr("0x",l);
-		f = 1;
+		*l += write(1, "(null)", 6);
+		return ;
 	}
-	a = "0123456789abcdef";
-	if(n >= 16)
-		ft_putaddr(n / 16, l,f);
-	ft_putchar(a[n % 16], l);
-}/*
-int main()
-{
-	int o =0;
-	char c;
-	ft_putaddr((size_t)&c,&o,0);
-	printf("\n%p",&c);
-}*/
+	while (*s)
+	{
+		ft_putchar(*s, l);
+		s++;
+	}
+}
