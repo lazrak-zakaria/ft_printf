@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 09:48:30 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/29 15:20:35 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:12:16 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,7 @@ void	ft_putun(unsigned int n, int *l)
 {
 	if (n > 9)
 		ft_putun(n / 10, l);
+	if (*l < 0)
+		return ;
 	ft_putchar(n % 10 + 48, l);
 }

@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 17:11:39 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/29 15:18:11 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:08:37 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@ void	ft_putstr(char *s, int *l)
 {
 	if (!s)
 	{
-		*l += write(1, "(null)", 6);
+		if (write(1, "(null)", 6) < 0)
+			*l = -1;
+		else
+			*l += 6;
 		return ;
 	}
 	while (*s)
 	{
 		ft_putchar(*s, l);
+		if (*l < 0)
+			return ;
 		s++;
 	}
 }

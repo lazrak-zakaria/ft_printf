@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:55:19 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/29 15:24:58 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:07:05 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	ft_call(va_list ap, char c, int *l)
 		ft_putaddr(va_arg(ap, size_t), l, 0);
 	else if (c == '%')
 		ft_putchar(c, l);
+	else
+		ft_putchar(c, l);
 }
 
 int	ft_printf(const char *s, ...)
@@ -44,10 +46,14 @@ int	ft_printf(const char *s, ...)
 		if (s[i] == '%' && s[i + 1])
 		{
 			ft_call(ap, s[++i], &l);
+			if (l < 0)
+				return (-1);
 			i++;
 			continue ;
 		}
 		ft_putchar(s[i], &l);
+		if (l < 0)
+			return (-1);
 		i++;
 	}
 	va_end(ap);
