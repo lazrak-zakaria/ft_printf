@@ -1,0 +1,3 @@
+https://www.reddit.com/r/C_Programming/comments/8f3i9m/some_questions_about_va_list/
+
+https://blog.nelhage.com/2010/10/amd64-and-va_arg/

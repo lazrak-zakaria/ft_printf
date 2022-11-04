@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:55:19 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/10/31 14:07:05 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/11/04 11:39:55 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int	ft_printf(const char *s, ...)
 			i++;
 			continue ;
 		}
-		ft_putchar(s[i], &l);
+		if (s[i] != '%')
+			ft_putchar(s[i], &l);
 		if (l < 0)
 			return (-1);
 		i++;
